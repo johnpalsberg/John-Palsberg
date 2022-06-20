@@ -1,7 +1,7 @@
 import traceback
 import labrad
-import TreeDict 
-import experiment_info 
+from treedict import TreeDict 
+from .experiment_info import experiment_info 
 
 
 class experiment(experiment_info):

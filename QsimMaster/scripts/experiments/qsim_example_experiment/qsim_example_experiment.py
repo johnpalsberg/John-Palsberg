@@ -3,7 +3,7 @@ import labrad
 import qsimexperiment
 import qsim_example_experiment
 
-class experiment_example(qsimexperiment): 
+class experiment_example(qsimexperiment.QsimExperiment): 
 
     name = 'Example Experiment'  # gives a name to display on scripscanner
 
