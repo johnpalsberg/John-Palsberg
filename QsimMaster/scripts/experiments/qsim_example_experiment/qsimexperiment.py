@@ -3,7 +3,7 @@ import numpy as np
 import time
 
 
-class QsimExperiment(experiment):
+class QsimExperiment(experiment.experiment):
 
     @classmethod
     def all_required_parameters(cls):
