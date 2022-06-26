@@ -23,7 +23,7 @@ try:
     import config.scriptscanner_config as sc_config
 except:
     import common.lib.config.scriptscanner_config as sc_config
-import scan_methods
+#import scan_methods 
 from scheduler import scheduler
 import sys
 
