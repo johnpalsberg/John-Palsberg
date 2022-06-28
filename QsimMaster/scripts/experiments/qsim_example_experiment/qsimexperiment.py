@@ -13,7 +13,7 @@ class QsimExperiment(experiment.experiment):
                  min_progress=0.0, max_progress=100.0,):
 
         required_parameters = self.all_required_parameters()
-        super(experiment, self).__init__(name, required_parameters)
+        super().__init__(name, required_parameters)
 
         if name is None:
             self.name = self.__class__.__name__
@@ -24,9 +24,9 @@ class QsimExperiment(experiment.experiment):
         self.cxn = cxn
         self.pv = None
         self.sc = None
-        self.init_mode = self.cxn.NormalPMTFlow.getcurrentmode()
-        self.hist_ctx = self.cxn.data_vault.context()
-        self.cxn.NormalPMTFlow.set_mode('Normal')
+        #self.init_mode = self.cxn.NormalPMTFlow.getcurrentmode()
+       # self.hist_ctx = self.cxn.data_vault.context()
+       # self.cxn.NormalPMTFlow.set_mode('Normal')
 
     def _connect(self):
         experiment._connect(self)
