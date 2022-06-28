@@ -20,16 +20,18 @@ from labrad.units import WithUnit
 from twisted.internet.defer import inlineCallbacks, DeferredList, returnValue
 from script_signals_server import ScriptSignalsServer
 try:
-    import config.scriptscanner_config as sc_config
-except:
+ import config.scriptscanner_config as sc_config
+ pass 
+except: 
     import common.lib.config.scriptscanner_config as sc_config
-import scan_methods 
-import single
-import experiment_info 
+#import scan_methods 
 from scheduler import scheduler
 import sys
-
-
+import experiment_info
+import single 
+import repeat_reload
+import scan_experiment_1D
+ 
 class script_class_parameters(object):
     '''
     storage class for information about the launchable script
@@ -174,7 +176,7 @@ class ScriptScanner(ScriptSignalsServer):
         # required parameters for the experiment.
         script = self.script_parameters[script_name]
         # single_launch is an experiment instance.
-        single_launch = scan_methods.single(script.cls)
+        single_launch = single.single(script.cls)
         scan_id = self.scheduler.add_scan_to_queue(single_launch)
         return scan_id
 
@@ -184,7 +186,7 @@ class ScriptScanner(ScriptSignalsServer):
         if script_name not in self.script_parameters.keys():
             raise Exception("Script {} Not Found".format(script_name))
         script = self.script_parameters[script_name]
-        repeat_launch = scan_methods.repeat_reload(script.cls, repeat,
+        repeat_launch = repeat_reload(script.cls, repeat,
                                                    save_data)
 
         scan_id = self.scheduler.add_scan_to_queue(repeat_launch)
@@ -204,11 +206,11 @@ class ScriptScanner(ScriptSignalsServer):
         measure_script = self.script_parameters[measure_script_name]
         parameter = (collection, parameter_name)
         if scan_script == measure_script:
-            scan_launch = scan_methods.scan_experiment_1D(scan_script.cls,
+            scan_launch = scan_experiment_1D.scan_experiment_1D(scan_script.cls,
                                                           parameter, minim,
                                                           maxim, steps, units)
         else:
-            scan_launch = scan_methods.scan_experiment_1D_measure(
+            scan_launch = scan_experiment_1D.scan_experiment_1D_measure(
                 scan_script.cls, measure_script.cls, parameter, minim, maxim,
                 steps, units)
         scan_id = self.scheduler.add_scan_to_queue(scan_launch)
@@ -227,7 +229,7 @@ class ScriptScanner(ScriptSignalsServer):
         if priority not in ['Normal', 'First in Queue', 'Pause All Others']:
             raise Exception("Priority not recognized")
         script = self.script_parameters[script_name]
-        single_launch = scan_methods.single(script.cls)
+        single_launch = scan_experiment_1D.single(script.cls)
         schedule_id = self.scheduler.new_scheduled_scan(single_launch,
                                                         duration['s'],
                                                         priority, start_now)
@@ -371,4 +373,6 @@ class ScriptScanner(ScriptSignalsServer):
 
 if __name__ == "__main__":
     from labrad import util
-    util.runServer(ScriptScanner())
+    server = ScriptScanner() 
+    util.runServer(server)
+   # server.stopServer()
