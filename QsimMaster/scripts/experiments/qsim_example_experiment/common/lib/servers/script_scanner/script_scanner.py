@@ -23,7 +23,9 @@ try:
     import config.scriptscanner_config as sc_config
 except:
     import common.lib.config.scriptscanner_config as sc_config
-#import scan_methods 
+import scan_methods 
+import single
+import experiment_info 
 from scheduler import scheduler
 import sys
 
@@ -273,7 +275,7 @@ class ScriptScanner(ScriptSignalsServer):
         through this server. The external script can then update its status, be
         paused or stopped.
         '''
-        external_scan = scan_methods.experiment_info(name)
+        external_scan = experiment_info.experiment_info(name)
         ident = self.scheduler.add_external_scan(external_scan)
         return ident
 
