@@ -29,7 +29,7 @@ class QsimExperiment(experiment.experiment):
        # self.cxn.NormalPMTFlow.set_mode('Normal')
 
     def _connect(self):
-        experiment._connect(self)
+        super()._connect()
         try:
             self.dv = self.cxn.servers['Data Vault']
         except KeyError as error:
