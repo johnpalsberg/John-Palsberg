@@ -1,0 +1,20 @@
+# OSX
+**/.DS_Store
+
+# python
+**/*.pyc
+**/__pycache__
+**/*.pyon
+**/*.h5
+
+# all of .idea (pycharm's config files)
+.idea
+**/.idea
+.idea/**
+
+# stuff we produce
+#**/*.txt
+
+# loki/promtail
+data/
+wal/

@@ -36,23 +36,23 @@ class QsimExperiment(experiment.experiment):
             error_message = error + '\n' + "DataVault is not running"
             raise KeyError(error_message)
 
-        try:
-            self.pmt = self.cxn.servers['NormalPMTFlow']
-        except KeyError as error:
-            error_message = error + '\n' + "NormalPMTFlow is not running"
-            raise KeyError(error_message)
+        # try:
+        #     self.pmt = self.cxn.servers['NormalPMTFlow']
+        # except KeyError as error:
+        #     error_message = error + '\n' + "NormalPMTFlow is not running"
+        #     raise KeyError(error_message)
 
-        try:
-            self.pulser = self.cxn.servers['pulser']
-        except KeyError as error:
-            error_message = error + '\n' + "Pulser is not running"
-            raise KeyError(error_message)
+        # try:
+        #     self.pulser = self.cxn.servers['pulser']
+        # except KeyError as error:
+        #     error_message = error + '\n' + "Pulser is not running"
+        #     raise KeyError(error_message)
 
-        try:
-            self.grapher = self.cxn.servers['grapher']
-        except KeyError as error:
-            error_message = error + '\n' + "Grapher is not running"
-            raise KeyError(error_message)
+        # try:
+        #     self.grapher = self.cxn.servers['grapher']
+        # except KeyError as error:
+        #     error_message = error + '\n' + "Grapher is not running"
+        #     raise KeyError(error_message)
 
         #try:
         #    self.timeharp = self.cxn.servers['timeharpserver']
