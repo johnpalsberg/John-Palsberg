@@ -45,11 +45,11 @@ from datetime import datetime
 
 try:
     import numpy
-    print "Numpy imported."
+    print ("Numpy imported.")
     useNumpy = True
-except ImportError, e:
-    print e
-    print "Numpy not imported.  The DataVault will operate, but will be slower."
+except (ImportError, e):
+    print (e)
+    print ("Numpy not imported.  The DataVault will operate, but will be slower.")
     useNumpy = False
 
 # TODO: tagging
@@ -983,8 +983,8 @@ class DataVault(LabradServer):
             gotLocation = True
         except:
             try:
-                print 'Could not load repository location from registry.'
-                print 'Please enter data storage directory or hit enter to use the current directory:'
+                print ('Could not load repository location from registry.')
+                print ('Please enter data storage directory or hit enter to use the current directory:')
                 DATADIR = raw_input('>>>')
                 if DATADIR == '':
                     DATADIR = os.path.join(os.path.split(__file__)[0], '__data__')
@@ -996,16 +996,16 @@ class DataVault(LabradServer):
                 p.set(nodename, DATADIR)
                 p.set('__default__', DATADIR)
                 yield p.send()
-                print DATADIR, "has been saved in the registry",
-                print "as the data location."
-                print "To change this, stop this server,"
-                print "edit the registry keys at", path,
-                print "and then restart."
-            except Exception, E:
+                print (DATADIR, "has been saved in the registry",)
+                print ("as the data location.")
+                print ("To change this, stop this server,")
+                print ("edit the registry keys at", path,)
+                print ("and then restart.")
+            except (Exception, E):
                 print
-                print E
+                print (E)
                 print
-                print "Press [Enter] to continue..."
+                print("Press [Enter] to continue...")
                 raw_input()
                 sys.exit()
         # create root session
