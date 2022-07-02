@@ -94,7 +94,7 @@ class scheduler(object):
         return [script.defer_on_done for script in self.running.itervalues() if not script.externally_launched]
 
     def get_running_external(self):
-        return [ident for (ident, script) in self.running.iteritems() if script.externally_launched]
+        return [ident for (ident, script) in self.running.items() if script.externally_launched]
 
     def get_running(self):
         running = []
