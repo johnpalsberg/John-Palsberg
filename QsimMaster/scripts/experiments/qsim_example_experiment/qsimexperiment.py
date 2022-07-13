@@ -241,6 +241,6 @@ class QsimExperiment(experiment.experiment):
 
 
     def _finalize(self, cxn, context):
-        self.pmt.set_mode(self.init_mode)
+        #self.pmt.set_mode(self.init_mode)
         self.finalize(cxn, context)
         self.sc.finish_confirmed(self.ident)

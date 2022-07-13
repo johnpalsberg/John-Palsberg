@@ -44,7 +44,7 @@ class experiment_example(qsimexperiment.QsimExperiment):
         example we will draw a parabola for a given range with a given amplitude
         '''
         self.setup_datavault('Range', 'Amplitude')  # gives the x and y names to Data Vault
-        self.setup_grapher('experiment_example')  # Tells the grapher which tab to plot the data on
+        #self.setup_grapher('experiment_example')  # Tells the grapher which tab to plot the data on
         self.amplitude = self.p.example_parameters.Amplitude  # shortens the amplitude name
         # the following generates a list of the points used in the scan. If the points
         # have LabRAD unit types they can be specified in the second argument
