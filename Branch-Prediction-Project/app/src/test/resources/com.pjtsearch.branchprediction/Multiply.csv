@@ -1,0 +1,6 @@
+ADDI,t0,zero,8
+ADDI,t1,zero,3
+ADD,t2,t1,t2
+ADDI,t3,t3,1
+BLT,t3,t0,-2
+OUT,t2,,
