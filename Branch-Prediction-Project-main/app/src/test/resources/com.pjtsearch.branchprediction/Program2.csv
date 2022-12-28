@@ -1,7 +1,0 @@
-ADDI,t2,zero,10
-ADDI,t0,t0,1
-ADDI,t0,t0,1
-BEQ,t2,t0,2
-JAL,t1,-3,
-ADDI,t3,t3,100
-OUT,t0,,

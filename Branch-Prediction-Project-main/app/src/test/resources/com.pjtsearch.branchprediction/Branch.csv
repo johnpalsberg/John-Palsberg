@@ -1,4 +1,0 @@
-ADDI,t1,zero,9
-ADDI,t0,t0,8
-BLT,t0,t1,-1
-OUT,t0,, 
