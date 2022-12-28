@@ -1,0 +1,6 @@
+ADDI,t0,zero,10
+ADDI,t1,zero,5
+ADDI,t3,zero,4
+SW,t0,t1,1
+LW,t2,t3,2
+OUT,t2,,
