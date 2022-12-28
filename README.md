@@ -1,7 +1,8 @@
 # John-Palsberg
 This is my Github repository, which contains the code for some of the projects that I have been working on.  
   
-
+------------------------------------------------------------------------------------------
+  
 Repository Folder Guide:
 
 QsimMaster Folder:
