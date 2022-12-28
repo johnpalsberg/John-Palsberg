@@ -6,7 +6,11 @@ This is my Github repository, which contains the code for some of the projects t
 Repository Folder Guide:
 
 QsimMaster Folder:
-  Here is the code for Thomas's Qsim project. It contains both his code and also the general common code from the Campell Group. So far, I have made some Python 2 to Python 3 upgrades and also some import statement fixes. 
+  This is the quantum computing software project that I worked on with several UCLA graduate students.
+  
+Branch-Prediction-Project:
+  This is the CPU simulator project that I worked on with a friend. 
+  
 
 
 
