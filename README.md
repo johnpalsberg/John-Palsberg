@@ -5,11 +5,13 @@ This is my Github repository, which contains the code for some of the projects t
   
 Repository Folder Guide:
 
+Branch-Prediction-Project Folder:
+  This is the CPU simulator project that I worked on with a friend. 
+
 QsimMaster Folder:
   This is the quantum computing software project that I worked on with several UCLA graduate students.
   
-Branch-Prediction-Project:
-  This is the CPU simulator project that I worked on with a friend. 
+
   
 
 
